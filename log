@@ -113,3 +113,8 @@ sudoku.c:163:20: error: returning ‘Stack *’ {aka ‘List *’} from a functi
 cc1: all warnings being treated as errors
 Compilation failed
 482a549
+Wed 15 May 2024 07:52:42 PM UTC: 
+ sudoku.c | 8 --------
+ 1 file changed, 8 deletions(-)
+ tests:  0|0
+b004c4d
