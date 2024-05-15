@@ -130,10 +130,13 @@ List* get_adj_nodes(Node* n)
                 aux=copy(n);
                 aux->sudo[i][j]=9;
                if (is_valid(aux)) pushBack(list,aux);
+               
+               return list;
             }
         }
     }
-    return list;
+   return list;
+    
 }
 
 
