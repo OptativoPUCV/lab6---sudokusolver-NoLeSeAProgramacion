@@ -104,31 +104,32 @@ List* get_adj_nodes(Node* n)
             {
                 Node* aux=copy(n);
                 aux->sudo[i][j]=1;
+                if (is_valid(aux))
+                  pushBack(list,aux);
+                aux=copy(n);
+               if (is_valid(aux)) aux->sudo[i][j]=2;
                 pushBack(list,aux);
                 aux=copy(n);
-                aux->sudo[i][j]=2;
-                pushBack(list,aux);
-                aux=copy(n);
-                aux->sudo[i][j]=3;
+               if (is_valid(aux)) aux->sudo[i][j]=3;
                 pushBack(list,aux);
                 aux=copy(n);
                 aux->sudo[i][j]=4;
-                pushBack(list,aux);
+               if (is_valid(aux)) pushBack(list,aux);
                 aux=copy(n);
                 aux->sudo[i][j]=5;
-                pushBack(list,aux);
+               if (is_valid(aux)) pushBack(list,aux);
                 aux=copy(n);
                 aux->sudo[i][j]=6;
-                pushBack(list,aux);
+               if (is_valid(aux)) pushBack(list,aux);
                 aux=copy(n);
                 aux->sudo[i][j]=7;
-                pushBack(list,aux);
+               if (is_valid(aux)) pushBack(list,aux);
                 aux=copy(n);
                 aux->sudo[i][j]=8;
-                pushBack(list,aux);
+               if (is_valid(aux)) pushBack(list,aux);
                 aux=copy(n);
                 aux->sudo[i][j]=9;
-                pushBack(list,aux);
+               if (is_valid(aux)) pushBack(list,aux);
             }
         }
     }
