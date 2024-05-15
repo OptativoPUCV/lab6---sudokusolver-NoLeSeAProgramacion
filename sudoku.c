@@ -93,46 +93,21 @@ int is_valid(Node* n)
 
 List* get_adj_nodes(Node* n)
 {
-    List* list=createList();
-    int i,j;
-   
-    for(i=0;i<9;i++)
-    {
-        for(j=0;j<9;j++)
-        {
-            if(n->sudo[i][j]==0)
+   List* list=createList();
+   int i,j;
+   for(i=0;i<9;i++)
+      {
+         for(j=0;j<9;j++)
             {
-                Node* aux=copy(n);
-                aux->sudo[i][j]=1;
-                pushBack(list,aux);
-                aux=copy(n);
-                aux->sudo[i][j]=2;
-                pushBack(list,aux);
-                aux=copy(n);
-                aux->sudo[i][j]=3;
-                pushBack(list,aux);
-                aux=copy(n);
-                aux->sudo[i][j]=4;
-                pushBack(list,aux);
-                aux=copy(n);
-                aux->sudo[i][j]=5;
-                pushBack(list,aux);
-                aux=copy(n);
-                aux->sudo[i][j]=6;
-                pushBack(list,aux);
-                aux=copy(n);
-                aux->sudo[i][j]=7;
-                pushBack(list,aux);
-                aux=copy(n);
-                aux->sudo[i][j]=8;
-                pushBack(list,aux);
-                aux=copy(n);
-                aux->sudo[i][j]=9;
-                pushBack(list,aux);
+               if(n->sudo[i][j]==0 && is_valid(n))
+               {
+                  Node* adj=copy(n);
+                  adj->sudo[i][j]=1;
+                  pushBack(list,adj);
+               }
             }
-        }
-    }
-    return list;
+      }
+   return list;
 }
 
 
@@ -155,31 +130,7 @@ int is_final(Node* n)
 Node* DFS(Node* initial, int* cont)
 {
    Stack* S=createStack();
-   push(S,initial);
    
-   while(get_size(S)!=0)
-      {
-         Node* n=top(S);
-         pop(S);
-         
-         if(is_valid(n)==1 && is_final(n)==1)
-         {
-            return n;
-         }
-         
-         List* list=get_adj_nodes(n);
-         Node* aux=first(list);
-         
-         while(aux!=NULL)
-            {
-               push(S,aux);
-               aux=next(list);
-            }
-         free(n);
-         (*cont)++;
-      }
-   
-   return NULL;
 }
 
 
