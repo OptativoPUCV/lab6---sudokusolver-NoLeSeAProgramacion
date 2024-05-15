@@ -95,10 +95,7 @@ List* get_adj_nodes(Node* n)
 {
     List* list=createList();
     int i,j;
-   if(is_valid(n)==0)
-   {
-      return list;
-   }
+   
     for(i=0;i<9;i++)
     {
         for(j=0;j<9;j++)
@@ -135,7 +132,14 @@ List* get_adj_nodes(Node* n)
             }
         }
     }
-    return list;
+   if(is_valid(n)==0)
+   {
+      return list;
+   }
+   else
+   {
+      return NULL;
+   }
 }
 
 
