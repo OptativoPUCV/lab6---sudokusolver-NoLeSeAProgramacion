@@ -172,7 +172,7 @@ Node* DFS(Node* initial, int* cont)
                aux=next(list);
             }
       }
-   return S;
+   return NULL;
 }
 
 
