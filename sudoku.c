@@ -95,11 +95,17 @@ List* get_adj_nodes(Node* n)
 {
    List* list=createList();
    int i,j;
+   
+   if(is_valid(n)==0)
+   {
+      return list;
+   }
+   
    for(i=0;i<9;i++)
       {
          for(j=0;j<9;j++)
             {
-               if(n->sudo[i][j]==0 && is_valid(n))
+               if(n->sudo[i][j]==0)
                {
                   Node* adj=copy(n);
                   adj->sudo[i][j]=1;
