@@ -107,11 +107,11 @@ List* get_adj_nodes(Node* n)
                 if (is_valid(aux))
                   pushBack(list,aux);
                 aux=copy(n);
-               if (is_valid(aux)) aux->sudo[i][j]=2;
-                pushBack(list,aux);
+               aux->sudo[i][j]=2;
+                if (is_valid(aux))pushBack(list,aux);
                 aux=copy(n);
-               if (is_valid(aux)) aux->sudo[i][j]=3;
-                pushBack(list,aux);
+               aux->sudo[i][j]=3;
+                if (is_valid(aux)) pushBack(list,aux);
                 aux=copy(n);
                 aux->sudo[i][j]=4;
                if (is_valid(aux)) pushBack(list,aux);
